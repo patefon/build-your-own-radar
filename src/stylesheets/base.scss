@@ -93,13 +93,14 @@ body {
 
   .blip-item-description {
     padding: 0 15px;
+    background: #505050!important;
   }
 
   header {
     text-align: left;
 
     .radar-title {
-      background-color: #505050!important;
+      background: #505050!important;
     }
 
     .radar-title .radar-title__text {
@@ -107,7 +108,7 @@ body {
       width: 100%;
       padding: 10px;
       display:block;
-      color:#FFF;
+      color:#FFF!important;
     }
 
     .radar-title .radar-title__logo {
