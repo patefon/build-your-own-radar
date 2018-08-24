@@ -299,7 +299,7 @@ const Radar = function (size, radar) {
   function createHomeLink(pageElement) {
     if (pageElement.select('.home-link').empty()) {
       pageElement.append('div')
-        .html('&#171; Back to Radar home')
+        .html('&#171; Вернуться')
         .classed('home-link', true)
         .classed('selected', true)
         .on('click', redrawFullRadar)
@@ -405,15 +405,10 @@ const Radar = function (size, radar) {
       .attr('class', 'radar-title')
       .append('div')
       .attr('class', 'radar-title__text')
-      .append('h1')
+      .append('h3')
       .text(document.title)
       .style('cursor', 'pointer')
       .on('click', redrawFullRadar);
-
-    header.select('.radar-title')
-      .append('div')
-      .attr('class', 'radar-title__logo')
-      .html('<a href="https://www.thoughtworks.com"> <img src="/images/logo.png" /> </a>');
 
     return header;
   }

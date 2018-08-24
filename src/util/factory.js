@@ -212,9 +212,9 @@ function plotLoading(content) {
 }
 
 function plotLogo(content) {
-    content.append('div')
-        .attr('class', 'input-sheet__logo')
-        .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>');
+    // content.append('div')
+    //     .attr('class', 'input-sheet__logo')
+    //     .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>');
 }
 
 function plotFooter(content) {
@@ -249,7 +249,7 @@ function plotForm(content) {
         .attr('type', 'submit')
         .append('a')
         .attr('class', 'button')
-        .text('Build');
+        .text('Построить');
 
 }
 
