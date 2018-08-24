@@ -222,8 +222,9 @@ body {
 
       text {
         &.blip-text {
-          font-size: 9px;
-          font-style: italic;
+          font-size: 10px;
+          // font-style: italic;
+          font-weight: 800;
           fill: $white;
         }
 

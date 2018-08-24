@@ -164,7 +164,7 @@ const FileName = function (url) {
 
 const GoogleSheetInput = function () {
     var self = {};
-    
+
     self.build = function () {
         var domainName = DomainName(window.location.search.substring(1));
         var queryParams = QueryParams(window.location.search.substring(1));
@@ -176,25 +176,15 @@ const GoogleSheetInput = function () {
         else if (domainName && domainName.endsWith('google.com') && queryParams.sheetId) {
             var sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName);
             console.log(queryParams.sheetName)
-
             sheet.init().build();
         } else {
             var content = d3.select('body')
                 .append('div')
                 .attr('class', 'input-sheet');
             set_document_title();
-
             plotLogo(content);
-
-            var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
-                ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/how-to-byor">Read this first.</a></p></div>';
-
-            plotBanner(content, bannerText);
-
             plotForm(content);
-
             plotFooter(content);
-
         }
     };
 
@@ -202,7 +192,7 @@ const GoogleSheetInput = function () {
 };
 
 function set_document_title() {
-    document.title = "Build your own Radar";
+    document.title = "ДРЦП: Технологический радар";
 }
 
 function plotLoading(content) {
@@ -216,7 +206,7 @@ function plotLoading(content) {
 
     plotLogo(content);
 
-    var bannerText = '<h1>Building your radar...</h1><p>Your Technology Radar will be available in just a few seconds</p>';
+    var bannerText = '<h1>Строим радар...</h1><p>Ваш технологический радар будет построен в течение нескольких секунд...</p>';
     plotBanner(content, bannerText);
     plotFooter(content);
 }
@@ -232,14 +222,7 @@ function plotFooter(content) {
         .append('div')
         .attr('id', 'footer')
         .append('div')
-        .attr('class', 'footer-content')
-        .append('p')
-        .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. '
-        + 'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">ThoughtWorks\' terms of use</a>. '
-        + 'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. '
-        + 'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.');
-
-
+        .attr('class', 'footer-content');
 
 }
 
@@ -252,9 +235,7 @@ function plotBanner(content, text) {
 
 function plotForm(content) {
     content.append('div')
-        .attr('class', 'input-sheet__form')
-        .append('p')
-        .html('<strong>Enter the URL of your <a href="https://www.thoughtworks.com/radar/how-to-byor" target="_blank">published</a> Google Sheet or CSV file below…</strong>');
+        .attr('class', 'input-sheet__form');
 
     var form = content.select('.input-sheet__form').append('form')
         .attr('method', 'get');
@@ -262,16 +243,14 @@ function plotForm(content) {
     form.append('input')
         .attr('type', 'text')
         .attr('name', 'sheetId')
-        .attr('placeholder', "e.g. https://docs.google.com/spreadsheets/d/<\sheetid\> or hosted CSV file")
         .attr('required','');
 
     form.append('button')
         .attr('type', 'submit')
         .append('a')
         .attr('class', 'button')
-        .text('Build my radar');
+        .text('Build');
 
-    form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>");
 }
 
 function plotErrorMessage(exception) {
@@ -286,15 +265,6 @@ function plotErrorMessage(exception) {
         console.error(exception);
     }
 
-    message = message.concat('<br/>', 'Please check <a href="https://www.thoughtworks.com/radar/how-to-byor">FAQs</a> for possible solutions.');
-
-    d3.select('body')
-        .append('div')
-        .attr('class', 'error-container')
-        .append('div')
-        .attr('class', 'error-container__message')
-        .append('p')
-        .html(message);
 }
 
 module.exports = GoogleSheetInput;
