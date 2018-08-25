@@ -47,7 +47,8 @@ const plotRadar = function (title, blips) {
         radar.addQuadrant(quadrant)
     });
 
-    var size = (window.innerHeight - 200) < 620 ? 620 : window.innerHeight - 200;
+    // var size = (window.innerHeight - 163) < 540 ? 540 : window.innerHeight - 163;
+    var size = window.innerHeight - 190;
 
     new GraphingRadar(size, radar).init().plot();
 }
