@@ -12,7 +12,7 @@ body {
   font: 18px 'Open Sans';
   -webkit-font-smoothing: antialiased;
   margin: 0;
-  background: #fffffc;
+  background: $port-gore;
 }
 
 @media print {
@@ -33,6 +33,7 @@ body {
     font-weight: normal;
   }
 
+  #radar-plot {
   #radar-plot {
     display: none;
   }
@@ -173,7 +174,7 @@ body {
       .legend {
         visibility: hidden;
         transition: visibility 1s ease 1s;
-        color: $black;
+        color: $white;
       }
 
       path {
@@ -319,7 +320,7 @@ body {
 
             &.highlight {
               color: white;
-              background-color: rgba(0, 0, 0, 0.8);
+              background-color: $port-gore-lighter;
             }
           }
 
@@ -333,7 +334,7 @@ body {
               border-top: 1px solid rgb(119, 119, 119);
               border-bottom: 1px solid rgb(119, 119, 119);
               padding: 20px;
-              color: $grey-text;
+              color: $spun-pearl;
               font-weight: 100;
               font-size: 14px;
             }
