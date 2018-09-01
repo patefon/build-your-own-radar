@@ -317,8 +317,8 @@ const Radar = function (size, radar) {
   function drawLegend(order) {
     removeRadarLegend();
 
-    var triangleKey = "New or moved";
-    var circleKey = "No change";
+    var triangleKey = "New/Moved";
+    var circleKey = "No changes";
 
     var container = d3.select('svg').append('g')
       .attr('class', 'legend legend'+"-"+order);
@@ -369,6 +369,7 @@ const Radar = function (size, radar) {
       .attr('x', x + 15)
       .attr('y', y + 25)
       .attr('font-size', '0.8em')
+      .attr('fill', '#FFF')
       .text(circleKey);
   }
 

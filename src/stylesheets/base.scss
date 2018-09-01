@@ -90,6 +90,7 @@ body {
 
   .blip-list-item {
     font-weight: bold;
+    color: $white;
   }
 
   .blip-item-description {
@@ -109,7 +110,7 @@ body {
       width: 100%;
       padding: 10px;
       display:block;
-      color:#FFF!important;
+      color:$white!important;
     }
 
     .radar-title .radar-title__logo {
@@ -262,6 +263,7 @@ body {
         font-size: $baseFont;
         margin: 0;
         font-weight: bold;
+        color: $white;
       }
 
       &.first {
@@ -336,6 +338,14 @@ body {
               color: $spun-pearl;
               font-weight: 100;
               font-size: 14px;
+            }
+
+            a {
+              color:$curious-blue;
+            }
+
+            strong {
+              color:$curious-blue;
             }
 
             transition: max-height 0.2s ease;
