@@ -311,6 +311,7 @@ body {
         li {
           list-style-type: none;
           padding-left: 0;
+          color:$white;
 
           .blip-list-item {
             padding: 2px 5px;
@@ -318,7 +319,7 @@ body {
             cursor: pointer;
             font-size: $baseFont;
             font-weight: 400;
-
+            color:$white;
             &.highlight {
               color: white;
               background-color: $port-gore-lighter;
