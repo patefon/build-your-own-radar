@@ -422,7 +422,7 @@ const Radar = function (size, radar) {
 
 
       header.append('div')
-        .attr('class', 'button ' + quadrant.order + ' full-view')
+        .attr('class', 'button ' + quadrant.order + ' full-view uppercase')
         .text(quadrant.quadrant.name())
         .on('mouseover', mouseoverQuadrant.bind({}, quadrant.order))
         .on('mouseout', mouseoutQuadrant.bind({}, quadrant.order))

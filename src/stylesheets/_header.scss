@@ -5,7 +5,7 @@ header {
   margin-bottom: 15px;
 
   .radar-title {
-    background-color: #505050!important;
+    background-color: $port-gore-lighter!important;
     padding-top: 30px;
     padding-bottom: 30px;
     display: table;
@@ -73,6 +73,10 @@ header {
 
     &.no-capitalize {
       text-transform: none;
+    }
+
+    &.uppercase {
+      text-transform: uppercase;
     }
 
     &:hover, &.selected {
