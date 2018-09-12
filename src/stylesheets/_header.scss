@@ -48,13 +48,26 @@ header {
   }
 
   .home-link {
-    color: $pink;
     cursor: pointer;
     display: inline-block;
     font-size: $baseFont;
     padding-bottom: 15px;
     text-align: left;
-    width: 80%;
+    position: absolute;
+    left:0;
+    margin: 12px 0 0 15px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    background-color: $grey-light;
+    color: $black;
+    line-height: 1em;
+    transition: all .1s ease-out;
+    text-transform: uppercase;
+    font-weight: 100;
+    &:hover {
+      transform: translate(0, -2px);
+      opacity: .85;
+    }
   }
 
   .button {
@@ -66,7 +79,7 @@ header {
     line-height: 1em;
     padding: 10px 20px;
     cursor: pointer;
-    transition: all .2s ease-out;
+    transition: all .1s ease-out;
 
     background-color: $grey-light;
     color: $black;

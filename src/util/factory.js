@@ -47,8 +47,7 @@ const plotRadar = function (title, blips) {
         radar.addQuadrant(quadrant)
     });
 
-    // var size = (window.innerHeight - 163) < 540 ? 540 : window.innerHeight - 163;
-    var size = window.innerHeight - 190;
+    var size = (window.innerHeight - 170) < 600 ? 600 : window.innerHeight - 90;
 
     new GraphingRadar(size, radar).init().plot();
 }
@@ -151,7 +150,6 @@ const DomainName = function (url) {
     return match == null ? null : match[1];
 }
 
-
 const FileName = function (url) {
     var search = /([^\/]+)$/;
     var match = search.exec(decodeURIComponent(url.replace(/\+/g, " ")));
@@ -161,7 +159,6 @@ const FileName = function (url) {
     }
     return url;
 }
-
 
 const GoogleSheetInput = function () {
     var self = {};
@@ -183,7 +180,6 @@ const GoogleSheetInput = function () {
                 .append('div')
                 .attr('class', 'input-sheet');
             set_document_title();
-            plotLogo(content);
             plotForm(content);
             plotFooter(content);
         }
@@ -193,7 +189,7 @@ const GoogleSheetInput = function () {
 };
 
 function set_document_title() {
-    document.title = "ДРЦП: Технологический радар";
+    document.title = "Технологический радар";
 }
 
 function plotLoading(content) {
@@ -205,17 +201,9 @@ function plotLoading(content) {
 
     set_document_title();
 
-    plotLogo(content);
-
     var bannerText = '<h1>Строим радар...</h1><p>Ваш технологический радар будет построен в течение нескольких секунд...</p>';
     plotBanner(content, bannerText);
     plotFooter(content);
-}
-
-function plotLogo(content) {
-    // content.append('div')
-    //     .attr('class', 'input-sheet__logo')
-    //     .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>');
 }
 
 function plotFooter(content) {
